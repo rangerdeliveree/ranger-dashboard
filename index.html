@@ -1,34 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ranger Dashboard</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Ranger Driver</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 
-<div class="screen">
+  <!-- APP ROOT -->
+  <div id="app" class="app">
 
-  <div class="topbar">
-    <div class="user">
-      <img src="images/avatar.png" class="avatar">
-      <div>
-        <div class="small">For monitor</div>
-        <div class="name">Pak Febru</div>
+    <!-- HEADER / BRAND -->
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-name">Ranger</span>
+        <span class="brand-plus">+</span>
       </div>
-    </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+      <!-- HERO / DECORATIVE TEXT -->
+      <section class="hero">
+        <h1 class="hero-text">
+          <span>#</span>
+          <span>NARIK</span>
+          <span>TERUS</span>
+          <span>KETUA</span>
+        </h1>
+      </section>
+
+      <!-- LOGIN CARD -->
+      <section class="login-card">
+
+        <!-- HELPER TEXT -->
+        <p class="helper-text">Masuk disini</p>
+
+        <!-- FORM -->
+        <form id="driverForm" class="driver-form" novalidate>
+
+          <!-- LABEL + HELP -->
+          <div class="label-row">
+            <label for="driverId">ID Driver</label>
+            <button 
+              type="button" 
+              class="help-btn" 
+              aria-label="Bantuan ID Driver"
+            >?</button>
+          </div>
+
+          <!-- INPUT -->
+<input
+  type="text"
+  id="driverId"
+  name="driverId"
+  class="input"
+  placeholder="#XXXXXX"
+  autocomplete="off"
+  required
+/>
+<small class="input-hint">Contoh format ID Driver</small>
+
+          <!-- SUBMIT -->
+          <button type="submit" class="btn-primary">
+            Gas!
+          </button>
+
+        </form>
+
+        <!-- ERROR / INFO MESSAGE -->
+        <div id="messageBox" class="message hidden">
+          <p>Udah masukin ID tapi gabisa DI-gas?</p>
+          <a href="#" class="help-link">baca dulu</a>
+        </div>
+
+      </section>
+
+    </main>
+
   </div>
 
-  <div class="level-card">
-    <div class="ranger">Ranger+</div>
-    <div class="level">0</div>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
