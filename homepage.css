@@ -41,27 +41,15 @@ html, body {
 
 /* ==========================
    RESPONSIVE SCALE
+   Keeps exact ratio
 ========================== */
-@media (max-width: 360px), (max-height: 640px) {
-  .canvas {
-    transform: scale(
-      min(
-        calc(100vw / 360),
-        calc(100vh / 640)
-      )
-    );
-  }
-}
-
-@media (min-width: 361px) and (min-height: 641px) {
-  .canvas {
-    transform: scale(
-      min(
-        calc(100vw / 360),
-        calc(100vh / 640)
-      )
-    );
-  }
+.canvas {
+  transform: scale(
+    min(
+      calc(100vw / 360),
+      calc(100vh / 640)
+    )
+  );
 }
 
 /* ==========================
@@ -86,7 +74,8 @@ html, body {
 }
 
 /* ==========================
-   BRAND (Penpot coords)
+   BRAND (Top Right)
+   Penpot: left 253px / top 13px
 ========================== */
 .brand {
   position: absolute;
@@ -100,18 +89,23 @@ html, body {
 }
 
 .brand-name {
-  font-size: 16px;
+  font-size: 16.6px;
   color: white;
 }
 
 .brand-plus {
-  font-size: 28px;
+  font-size: 29px;
   color: #fddc03;
   line-height: 1;
 }
 
 /* ==========================
    HERO TEXT
+   Penpot group:
+   left 158px
+   top 80px
+   width 168px
+   height 294px
 ========================== */
 .hero {
   position: absolute;
@@ -123,7 +117,7 @@ html, body {
 
 .hero-text {
   font-family: 'Anton', sans-serif;
-  font-size: 60.8px;
+  font-size: 60.79px;
   line-height: 1.05;
   text-align: right;
   color: #fddc03;
@@ -135,16 +129,22 @@ html, body {
 }
 
 /* ==========================
-   LOGIN CARD
+   LOGIN CARD GROUP
+   Penpot:
+   left 36.5px
+   top 430.5px
 ========================== */
 .login-card {
   position: absolute;
-  left: 36px;
-  top: 430px;
+  left: 36.5px;
+  top: 430.5px;
   width: 288px;
 }
 
-/* Helper text */
+/* ==========================
+   HELPER TEXT
+   "Masuk disini"
+========================== */
 .helper-text {
   font-family: 'Milliard', sans-serif;
   font-weight: 200;
@@ -153,26 +153,32 @@ html, body {
   margin-bottom: 6px;
 }
 
-/* Green form block */
+/* ==========================
+   GREEN FORM BLOCK
+========================== */
 .driver-form {
   background: #3daf49;
   border-radius: 16px;
   padding: 12px;
 }
 
-/* Label row */
+/* ==========================
+   LABEL ROW
+========================== */
 .label-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: 'Milliard', sans-serif;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 17.1px;
   color: white;
   margin-bottom: 6px;
 }
 
-/* Help button */
+/* ==========================
+   HELP BUTTON
+========================== */
 .help-btn {
   width: 16px;
   height: 16px;
@@ -183,9 +189,15 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-/* Input */
+/* ==========================
+   INPUT
+   Penpot:
+   height ~39px
+   font-size 24px
+========================== */
 .input {
   width: 100%;
   height: 39px;
@@ -197,13 +209,16 @@ html, body {
   font-size: 24px;
   background: #f5f5f5;
   color: #535353;
+  outline: none;
 }
 
 .input::placeholder {
   color: #c5c5c5;
 }
 
-/* Input hint */
+/* ==========================
+   INPUT HINT
+========================== */
 .input-hint {
   margin-top: 6px;
   font-family: 'Milliard', sans-serif;
@@ -212,7 +227,9 @@ html, body {
   color: white;
 }
 
-/* Button */
+/* ==========================
+   BUTTON "Gas!"
+========================== */
 .btn-primary {
   margin-top: 10px;
   width: 100%;
@@ -221,14 +238,22 @@ html, body {
   border-radius: 8px;
   font-family: 'Milliard', sans-serif;
   font-weight: 700;
-  font-size: 19px;
+  font-size: 19.2px;
   color: #535353;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border: none;
 }
 
-/* Bottom message */
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* ==========================
+   BOTTOM MESSAGE ROW
+========================== */
 .message {
   margin-top: 6px;
   display: flex;
@@ -239,7 +264,9 @@ html, body {
   color: white;
 }
 
-/* baca dulu pill */
+/* ==========================
+   "baca dulu" PILL
+========================== */
 .help-link {
   background: #3daf49;
   border-radius: 18px;
@@ -248,4 +275,5 @@ html, body {
   font-weight: 700;
   font-size: 12px;
   color: #fddc03;
+  text-decoration: none;
 }
