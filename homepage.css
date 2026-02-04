@@ -6,7 +6,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://design.penpot.app/assets/by-id/b4ee9395-4d6e-4f85-bc06-ae907369c432) format('woff');
+  src: url("fonts/milliard-700.woff2") format("woff2");
 }
 
 @font-face {
@@ -14,7 +14,7 @@
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url(https://design.penpot.app/assets/by-id/e98eb193-81ca-444f-ad20-a854c19880e2) format('woff');
+  src: url("fonts/milliard-200.woff2") format("woff2");
 }
 
 /* Anton + Comfortaa (from Penpot) */
