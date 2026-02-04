@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <title>Ranger Driver</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- HOMEPAGE CSS -->
+  <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
 
@@ -47,20 +50,21 @@
               type="button" 
               class="help-btn" 
               aria-label="Bantuan ID Driver"
+              onclick="alert('Masukkan ID Driver dengan format: #XXXXXX\nContoh: #A1B2C3')"
             >?</button>
           </div>
 
           <!-- INPUT -->
-<input
-  type="text"
-  id="driverId"
-  name="driverId"
-  class="input"
-  placeholder="#XXXXXX"
-  autocomplete="off"
-  required
-/>
-<small class="input-hint">Contoh format ID Driver</small>
+          <input
+            type="text"
+            id="driverId"
+            name="driverId"
+            class="input"
+            placeholder="#XXXXXX"
+            autocomplete="off"
+            required
+          />
+          <small class="input-hint">Contoh format ID Driver</small>
 
           <!-- SUBMIT -->
           <button type="submit" class="btn-primary">
@@ -81,6 +85,7 @@
 
   </div>
 
+  <!-- APP SCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>
