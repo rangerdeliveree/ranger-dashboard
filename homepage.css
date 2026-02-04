@@ -1,46 +1,239 @@
+/* =========================
+   FONT FACES
+   ========================= */
+@font-face {
+  font-family: 'Milliard';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://design.penpot.app/assets/by-id/b4ee9395-4d6e-4f85-bc06-ae907369c432) format('woff');
+}
+
+@font-face {
+  font-family: 'Milliard';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://design.penpot.app/assets/by-id/e98eb193-81ca-444f-ad20-a854c19880e2) format('woff');
+}
+
+/* Anton + Comfortaa (from Penpot) */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Comfortaa:wght@700&display=swap');
+
+/* =========================
+   DESIGN TOKENS
+   ========================= */
+:root {
+  --yellow: #fddc03;
+  --green: #3daf49;
+  --white: #ffffff;
+  --gray-bg: #f5f5f5;
+  --gray-text: #c5c5c5;
+  --dark-text: #535353;
+
+  --radius-card: 16px;
+  --radius-input: 8px;
+  --radius-btn: 8px;
+  --radius-pill: 18px;
+
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+}
+
+/* =========================
+   RESET
+   ========================= */
 * {
   box-sizing: border-box;
-  font-family: 'Comfortaa', cursive;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
 }
 
 body {
-  margin: 0;
-  background: #EEEDE8;
-  display: flex;
-  justify-content: center;
-}
-
-.screen {
-  width: 360px;
-  min-height: 100vh;
-  background: #EEEDE8;
-}
-
-.topbar {
   background: #000;
-  color: white;
-  padding: 12px;
+  color: var(--white);
+  font-family: 'Milliard', system-ui, sans-serif;
 }
 
-.name {
-  color: #FDDC03;
+/* =========================
+   APP LAYOUT
+   ========================= */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url("https://design.penpot.app/assets/by-file-media-id/5b54d9b8-49bd-8008-8007-7534b88f41fd")
+    no-repeat center center / cover;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+.app-header {
+  padding: var(--space-md);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 700;
 }
 
-.level-card {
-  margin: 20px;
-  padding: 20px;
-  background: white;
-  border-radius: 16px;
-  text-align: center;
+.brand-name {
+  font-size: 16px;
+  color: var(--white);
 }
 
-.ranger {
-  color: #3FAE29;
+.brand-plus {
+  font-size: 28px;
+  color: var(--yellow);
+  line-height: 1;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: var(--space-lg);
+}
+
+.hero-text {
+  font-family: 'Anton', sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  text-align: right;
+  color: var(--yellow);
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.35);
+}
+
+.hero-text span {
+  display: block;
+}
+
+/* =========================
+   LOGIN CARD
+   ========================= */
+.login-card {
+  background: transparent;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* =========================
+   HELPER TEXT
+   ========================= */
+.helper-text {
+  font-size: 11px;
+  font-weight: 200;
+  opacity: 0.9;
+}
+
+/* =========================
+   FORM
+   ========================= */
+.driver-form {
+  background: var(--green);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Label row */
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 700;
+  font-size: 16px;
 }
 
-.level {
-  font-size: 72px;
-  color: #3FAE29;
+/* Help button */
+.help-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--yellow);
+  border: none;
+  color: var(--green);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Input */
+.input {
+  height: 40px;
+  border-radius: var(--radius-input);
+  border: none;
+  padding: 0 var(--space-sm);
+  font-size: 18px;
+  font-weight: 700;
+  background: var(--gray-bg);
+  color: var(--dark-text);
+}
+
+.input::placeholder {
+  color: var(--gray-text);
+}
+
+/* =========================
+   BUTTON
+   ========================= */
+.btn-primary {
+  margin-top: var(--space-sm);
+  background: var(--yellow);
+  border: none;
+  border-radius: var(--radius-btn);
+  height: 44px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--dark-text);
+  cursor: pointer;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   MESSAGE / HELP
+   ========================= */
+.message {
+  margin-top: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 200;
+}
+
+.help-link {
+  background: var(--green);
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--yellow);
+}
+
+.hidden {
+  display: none;
 }
