@@ -1,91 +1,80 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Ranger Driver</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- HOMEPAGE CSS -->
-  <link rel="stylesheet" href="homepage.css">
+  <!-- Link to the homepage CSS (cache-bust query to force reload when replacing) -->
+  <link rel="stylesheet" href="homepage.css?v=20260204">
+
+  <!-- Optional: preconnect to google fonts (speeds font load) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
+  <noscript style="color:#fff; padding:12px; background:#111; text-align:center;">
+    Please enable JavaScript for the best experience.
+  </noscript>
 
-  <!-- APP ROOT -->
-  <div id="app" class="app">
+  <!-- VIEWPORT: centers the design canvas and allows proportional scaling -->
+  <div class="viewport">
+    <!-- DESIGN CANVAS (Penpot frame sized 360 x 640) -->
+    <div id="app" class="canvas" role="application" aria-label="Ranger Driver app">
 
-    <!-- HEADER / BRAND -->
-    <header class="app-header">
-      <div class="brand">
+      <!-- BRAND (right-top as in design) -->
+      <div class="brand" aria-hidden="true">
         <span class="brand-name">Ranger</span>
         <span class="brand-plus">+</span>
       </div>
-    </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="main">
-
-      <!-- HERO / DECORATIVE TEXT -->
-      <section class="hero">
-        <h1 class="hero-text">
+      <!-- HERO (exact positions derived from Penpot) -->
+      <div class="hero" aria-hidden="true">
+        <div class="hero-text" aria-hidden="true">
           <span>#</span>
           <span>NARIK</span>
           <span>TERUS</span>
           <span>KETUA</span>
-        </h1>
-      </section>
+        </div>
+      </div>
 
-      <!-- LOGIN CARD -->
-      <section class="login-card">
+      <!-- LOGIN CARD (positioned exactly like design) -->
+      <div class="login-card" role="region" aria-label="Login card">
+        <div class="helper-text">Masuk disini</div>
 
-        <!-- HELPER TEXT -->
-        <p class="helper-text">Masuk disini</p>
-
-        <!-- FORM -->
-        <form id="driverForm" class="driver-form" novalidate>
-
-          <!-- LABEL + HELP -->
+        <form id="driverForm" class="driver-form" novalidate autocomplete="off">
           <div class="label-row">
-            <label for="driverId">ID Driver</label>
-            <button 
-              type="button" 
-              class="help-btn" 
-              aria-label="Bantuan ID Driver"
-              onclick="alert('Masukkan ID Driver dengan format: #XXXXXX\nContoh: #A1B2C3')"
-            >?</button>
+            <span class="label">ID Driver</span>
+            <button type="button" class="help-btn" aria-label="Bantuan ID Driver" title="Contoh format: #A1B2C3">?</button>
           </div>
 
-          <!-- INPUT -->
           <input
             type="text"
             id="driverId"
             name="driverId"
             class="input"
             placeholder="#XXXXXX"
-            autocomplete="off"
+            inputmode="text"
+            maxlength="7"
+            aria-describedby="hint"
             required
           />
-          <small class="input-hint">Contoh format ID Driver</small>
 
-          <!-- SUBMIT -->
-          <button type="submit" class="btn-primary">
-            Gas!
-          </button>
+          <div id="hint" class="input-hint">Contoh format ID Driver</div>
 
+          <button type="submit" class="btn-primary" aria-label="Gas!">Gas!</button>
         </form>
 
-        <!-- ERROR / INFO MESSAGE -->
-        <div id="messageBox" class="message hidden">
-          <p>Udah masukin ID tapi gabisa DI-gas?</p>
-          <a href="#" class="help-link">baca dulu</a>
+        <div class="message" aria-hidden="false">
+          <span>Udah masukin ID tapi gabisa DI-gas?</span>
+          <a class="help-link" href="#" role="link">baca dulu</a>
         </div>
+      </div>
 
-      </section>
-
-    </main>
-
+    </div>
   </div>
 
-  <!-- APP SCRIPT -->
+  <!-- Hook to your script (keeps behavior separate) -->
   <script src="script.js"></script>
 </body>
 </html>
